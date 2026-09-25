@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OIL Green Energy Limited (OGEL) — Accelerating India’s clean energy transition</title>
+<meta name="description" content="OIL Green Energy Limited, a wholly owned subsidiary of Oil India Limited, invests in renewable energy, green hydrogen, biofuels, CCUS and geothermal energy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 8 C32 8 15 29 15 41 A17 17 0 0 0 49 41 C49 29 32 8 32 8 Z' fill='%231F5C45'/%3E%3Cpath d='M24 50 C24 38 32 30 42 28 C42 40 35 49 24 50 Z' fill='%239CC9A0'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ground:#F6F7F2; --ink:#10231C; --muted:#4A5C54; --soft:#6B7F75; --line:#DDE5DC; --line2:#C9D7C8;
+  --forest:#1F5C45; --pine:#12372A; --pine2:#173F31; --night:#0E211A; --leaf:#9CC9A0; --sage:#E6EEE6; --mist:#EEF3EE;
+  --sun:#E0A43A; --sunlt:#F0C674; --amber:#8A5A0B; --teal:#2F7E86; --sand:#F3EBD8; --white:#FFFFFF;
+  --disp:'Bricolage Grotesque','Noto Sans Devanagari',Georgia,serif;
+  --body:'Figtree','Noto Sans Devanagari',system-ui,sans-serif;
+  --pad:64px;
+}
+html{font-size:16px;scroll-behavior:smooth}
+html.ts-sm{font-size:14.5px} html.ts-lg{font-size:18px}
+html.hc{--ground:#FFFFFF;--ink:#000000;--muted:#1B1B1B;--soft:#2A2A2A;--line:#555;--line2:#333;--sage:#E8E8E8;--mist:#F0F0F0;--amber:#6B4300}
+html.hc a{text-decoration:underline}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);line-height:1.5;overflow-x:hidden}
+a{color:var(--forest)} a:hover{color:var(--ink)}
+button,input{font-family:inherit}
+img,svg{max-width:100%}
+.disp{font-family:var(--disp)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:.875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin:0}
+h1,h2,h3{font-family:var(--disp);margin:0;font-weight:600;letter-spacing:-.025em}
+.h2{font-size:clamp(2rem,3.6vw,3.25rem);line-height:1.08}
+.lead{font-size:1.0625rem;line-height:1.65;color:var(--muted);margin:0;max-width:460px}
+.sec{padding:96px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:48px}
+.sec-head>div{display:flex;flex-direction:column;gap:14px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--sun);color:var(--ink);padding:10px 16px;border-radius:8px;z-index:100;font-weight:700}
+.skip:focus{left:16px}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+
+/* animation */
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(224,164,58,.55)}100%{box-shadow:0 0 0 14px rgba(224,164,58,0)}}
+@keyframes ring{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes prog{from{width:0}to{width:100%}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes drop{from{opacity:0;transform:translateY(-16px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+@keyframes drift{0%,100%{transform:translateX(0)}50%{transform:translateX(40px)}}
+@keyframes glow{0%,100%{opacity:1}50%{opacity:.45}}
+@keyframes slideIn{from{transform:translateX(100%)}to{transform:none}}
+.swap>*{animation:rise .65s cubic-bezier(.2,.7,.2,1) both}
+.swap>*:nth-child(2){animation-delay:.07s}.swap>*:nth-child(3){animation-delay:.14s}.swap>*:nth-child(4){animation-delay:.21s}.swap>*:nth-child(5){animation-delay:.28s}.swap>*:nth-child(6){animation-delay:.35s}
+.spin{transform-box:fill-box;transform-origin:50% 50%;animation:spin 7s linear infinite}
+.spin-slow{transform-box:fill-box;transform-origin:50% 50%;animation:spin 11s linear infinite}
+.orbit{transform-box:fill-box;transform-origin:50% 50%;animation:spin 40s linear infinite}
+.orbit-r{transform-box:fill-box;transform-origin:50% 50%;animation:spin 26s linear infinite reverse}
+.breathe{transform-box:fill-box;transform-origin:50% 50%;animation:breathe 6s ease-in-out infinite}
+.floaty{animation:floaty 5s ease-in-out infinite}
+.pulse-ring{transform-box:fill-box;transform-origin:50% 50%;animation:ring 1.8s ease-out infinite}
+.drift{animation:drift 18s ease-in-out infinite}
+.ping-svg{animation:glow 2.4s ease-in-out infinite}
+.ping{animation:ping 1.8s ease-out infinite}
+.draw *{stroke-dasharray:100;stroke-dashoffset:100;animation:draw 1.3s cubic-bezier(.4,.1,.2,1) .15s forwards}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.no-motion *,.no-motion *::before,.no-motion *::after{animation:none!important;transition:none!important}
+.no-motion .draw *{stroke-dashoffset:0}
+.no-motion .reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.draw *{stroke-dashoffset:0}.reveal{opacity:1;transform:none}}
+
+/* shared components */
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-size:1rem;font-weight:600;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:transform .25s,box-shadow .25s,background .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(16,35,28,.45)}
+.btn .arr{transition:transform .25s}.btn:hover .arr{transform:translateX(4px)}
+.btn-primary{background:var(--forest);color:#fff}.btn-primary:hover{color:#fff}
+.btn-ghost{border-color:var(--forest);color:var(--forest);background:transparent}
+.btn-dark{background:var(--ink);color:var(--ground)}.btn-dark:hover{color:var(--ground)}
+.icon-btn{width:44px;height:44px;border-radius:999px;border:1px solid var(--line2);background:#fff;color:var(--forest);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .25s}
+.icon-btn:hover{transform:translateY(-2px)}
+.chip-btn{min-height:44px;padding:0 18px;border-radius:999px;font-size:.875rem;font-weight:600;cursor:pointer;background:#fff;color:var(--ink);border:1px solid var(--line2);transition:all .25s}
+.chip-btn[aria-pressed="true"]{background:var(--forest);color:#fff;border-color:var(--forest)}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px -18px rgba(16,35,28,.28);border-color:var(--leaf)}
+.shine{position:relative;overflow:hidden}
+.shine::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);transition:left .7s ease;pointer-events:none}
+.shine:hover::after{left:130%}
+.zoom{position:relative;overflow:hidden}
+.zoom .zin{position:absolute;inset:0;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.zoom:hover .zin{transform:scale(1.06)}
+.zin svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.demo-tag{position:absolute;top:14px;right:14px;background:rgba(16,35,28,.72);color:#F6F7F2;font-size:.6875rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;z-index:2}
+.caption{position:absolute;left:20px;bottom:20px;background:rgba(246,247,242,.94);border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;gap:2px;z-index:2;color:var(--ink)}
+
+/* utility bar */
+.util{background:#0E2A20;color:#DCE7DD;font-size:.8125rem}
+.util .wrap{min-height:40px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.util a{color:#DCE7DD;text-decoration:none}.util a:hover{text-decoration:underline;color:#fff}
+.util-r{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.sep{width:1px;height:14px;background:#3C5A4D}
+.ubtn{background:transparent;border:1px solid #3C5A4D;color:#DCE7DD;border-radius:6px;min-width:30px;height:26px;font-size:.8125rem;cursor:pointer;padding:0 6px;display:inline-flex;align-items:center;gap:6px}
+.ubtn:hover{background:#173D30}
+.ubtn[aria-pressed="true"]{background:var(--sun);color:#10231C;border-color:var(--sun);font-weight:700}
+.lang{display:flex;background:#173D30;border-radius:999px;padding:3px}
+.lang button{border:0;border-radius:999px;padding:0 12px;height:26px;font-size:.8125rem;cursor:pointer;background:transparent;color:#DCE7DD}
+.lang button[aria-pressed="true"]{background:var(--sun);color:#10231C;font-weight:700}
+
+/* header + mega */
+.site{position:sticky;top:0;z-index:50;background:rgba(246,247,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.site .wrap{height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);flex-shrink:0}
+.brand b{font-family:var(--disp);font-size:1.125rem;letter-spacing:-.01em;display:block}
+.brand small{font-size:.8125rem;color:var(--muted);font-family:'Noto Sans Devanagari',sans-serif}
+.mainnav>ul{list-style:none;margin:0;padding:0;display:flex;gap:22px;font-size:.9375rem;font-weight:500}
+.navitem{position:relative;display:flex;align-items:center;height:88px}
+.navlink{white-space:nowrap;text-decoration:none;color:var(--ink);position:relative;padding:6px 0;display:flex;align-items:center;gap:4px;background:none;border:0;font:inherit;cursor:pointer}
+.navlink::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--sun);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.navitem:hover .navlink::after,.navitem:focus-within .navlink::after{transform:scaleX(1)}
+.chev{transition:transform .3s}.navitem:hover .chev{transform:rotate(180deg)}
+.mega{position:absolute;top:78px;left:-20px;min-width:260px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 24px 48px -20px rgba(16,35,28,.3);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,visibility .25s;display:grid;gap:2px}
+.mega.right{left:auto;right:-20px}.mega.wide{grid-template-columns:repeat(2,minmax(0,1fr));min-width:540px}
+.navitem:hover .mega,.navitem:focus-within .mega{opacity:1;visibility:visible;transform:none}
+.mega a{display:flex;align-items:center;min-height:40px;padding:0 12px;border-radius:10px;text-decoration:none;color:var(--ink);font-size:.875rem;transition:background .2s,padding .2s}
+.mega a:hover{background:var(--mist);padding-left:18px;color:var(--forest)}
+.head-actions{display:flex;gap:8px}
+.menu-btn{display:none;background:var(--forest);color:#fff;border:0}
+
+/* drawer */
+.drawer-bg{position:fixed;inset:0;background:rgba(14,33,26,.55);z-index:90;animation:fadeIn .25s both}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--ground);z-index:91;display:flex;flex-direction:column;animation:slideIn .4s cubic-bezier(.2,.7,.2,1) both}
+.drawer-head{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid var(--line)}
+.drawer nav{overflow:auto;padding:8px 16px 32px}
+.acc{border-bottom:1px solid var(--line)}
+.acc>button{width:100%;min-height:56px;display:flex;align-items:center;justify-content:space-between;background:none;border:0;font-size:1.0625rem;font-weight:600;color:var(--ink);cursor:pointer;padding:0}
+.acc>button .chev{transition:transform .3s}.acc>button[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.acc-body{display:none;flex-direction:column;padding:0 0 12px 12px}
+.acc-body.open{display:flex;animation:rise .35s both}
+.acc-body a{min-height:44px;display:flex;align-items:center;color:var(--muted);text-decoration:none}
+
+/* search */
+.search-bg{position:fixed;inset:0;background:rgba(14,33,26,.72);backdrop-filter:blur(6px);z-index:95;display:flex;justify-content:center;align-items:flex-start;padding:10vh 16px 16px;animation:fadeIn .25s both}
+.search-box{width:min(880px,100%);background:var(--ground);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:18px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5);animation:drop .35s cubic-bezier(.2,.7,.2,1) both;max-height:80vh;overflow:auto}
+.search-field{flex:1;display:flex;align-items:center;gap:12px;min-height:60px;padding:0 20px;background:#fff;border:2px solid var(--forest);border-radius:16px}
+.search-field input{flex:1;border:0;outline:none;font-size:1.25rem;background:transparent;color:var(--ink);min-width:0}
+.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.res{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px;padding:0 16px;background:#fff;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);transition:background .25s,padding .25s}
+.res:hover{background:var(--mist);padding-left:22px}
+.res span:last-child{font-size:.75rem;font-weight:600;color:var(--soft)}
+.res mark{background:#F6DFA4;color:inherit;border-radius:3px}
+
+/* hero */
+.hero{background-image:radial-gradient(rgba(31,92,69,.13) 1px,transparent 1px);background-size:22px 22px}
+.hero .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;padding-top:64px;min-height:720px}
+.hero-text{display:flex;flex-direction:column;gap:32px;padding-top:16px}
+.slide{display:flex;flex-direction:column;gap:24px;min-height:470px}
+.badge{align-self:flex-start;display:flex;align-items:center;gap:10px;background:var(--sage);color:var(--forest);border-radius:999px;padding:8px 16px;font-size:.875rem;font-weight:600}
+.badge i{width:8px;height:8px;border-radius:999px;background:var(--sun);display:block}
+.hero h1{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.04;letter-spacing:-.03em;max-width:620px;text-wrap:balance}
+.hero p{margin:0;font-size:1.1875rem;line-height:1.6;color:var(--muted);max-width:560px}
+.ctas{display:flex;gap:16px;flex-wrap:wrap}
+.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.dots{display:flex;gap:4px;align-items:center}
+.dot{height:44px;border:0;background:transparent;padding:0 4px;cursor:pointer;display:flex;align-items:center;width:36px;transition:width .35s}
+.dot[aria-current="true"]{width:72px}
+.dot span{display:block;width:100%;height:6px;border-radius:999px;background:var(--line2);overflow:hidden}
+.dot .prog{display:block;height:6px;width:100%;background:var(--forest);border-radius:999px;animation:prog 6.5s linear both}
+.hero.paused .prog{animation-play-state:paused}
+.count{font-family:var(--disp);font-weight:600;color:var(--muted);margin-left:6px}
+.hero{overflow:hidden}.hero-art{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}.hero-art svg{overflow:hidden}
+.hero-art svg{width:100%;height:auto;max-width:620px;display:block}
+.hero-art [data-px]{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.hero-art [data-hl]{transition:opacity .6s;opacity:0}
+.hero-art [data-hl].on{opacity:1}
+.focus-chip{position:absolute;top:40px;left:8px;z-index:2}
+.focus-chip>div{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 18px 12px 12px;box-shadow:0 16px 36px -20px rgba(16,35,28,.35)}
+.focus-chip .num{width:40px;height:40px;border-radius:12px;background:var(--forest);color:#F6F7F2;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:700}
+.focus-chip small{display:block;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.focus-chip b{font-family:var(--disp);font-size:1.0625rem}
+
+/* ticker */
+.ticker{background:var(--forest);color:#F6F7F2;display:flex;align-items:center;overflow:hidden;min-height:56px}
+.ticker .label{flex-shrink:0;padding:0 24px 0 var(--pad);position:relative;z-index:1;background:var(--forest);display:flex;align-items:center;min-height:56px}
+.ticker .label span{background:var(--sun);color:#10231C;font-weight:700;font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:6px}
+.ticker .track{flex:1;overflow:hidden}
+.marquee{display:flex;gap:48px;width:max-content;white-space:nowrap;animation:marquee 38s linear infinite}
+.ticker:hover .marquee,.ticker:focus-within .marquee{animation-play-state:paused}
+.marquee a{color:#F6F7F2;text-decoration:none}.marquee a:hover{text-decoration:underline}
+.marquee i{color:var(--leaf);font-style:normal}
+
+/* roles */
+.roles{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.role-btn{min-height:48px;padding:0 22px;border-radius:999px;font-size:.9375rem;font-weight:600;cursor:pointer;background:#fff;color:var(--ink);border:1px solid var(--line2);transition:all .25s}
+.role-btn:hover{transform:translateY(-2px)}
+.role-btn[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.role-panel{display:grid;grid-template-columns:4fr 8fr;gap:24px;min-height:256px}
+.role-card{background:var(--forest);color:#F6F7F2;border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.role-card small{font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sunlt)}
+.role-card b{font-family:var(--disp);font-size:1.875rem;font-weight:600;line-height:1.2}
+.role-card a{color:#F6F7F2;font-weight:600}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.tile{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:80px;padding:0 22px;background:var(--mist);border:1px solid var(--line);border-radius:18px;text-decoration:none;color:var(--ink);font-weight:600;transition:transform .3s,background .3s,border-color .3s}
+.tile:hover{transform:translateY(-4px);border-color:var(--leaf);background:#fff;color:var(--ink)}
+.tile svg{transition:transform .3s;flex-shrink:0}.tile:hover svg{transform:translate(3px,-3px)}
+
+/* business explorer */
+.explorer{display:grid;grid-template-columns:5fr 7fr;gap:24px}
+.areas{display:flex;flex-direction:column;gap:8px}
+.area{display:flex;align-items:center;gap:18px;min-height:86px;padding:0 24px;border-radius:20px;cursor:pointer;background:#fff;color:var(--ink);border:1px solid var(--line);transition:background .3s,color .3s,transform .3s;text-align:left}
+.area .n{width:44px;height:44px;flex-shrink:0;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;background:var(--sage);color:var(--forest)}
+.area .t{flex:1;font-family:var(--disp);font-size:1.3125rem;font-weight:600}
+.area svg{opacity:.35;transform:translateX(-6px);transition:transform .3s,opacity .3s}
+.area[aria-selected="true"]{background:var(--forest);color:#F6F7F2;border-color:var(--forest);transform:translateX(8px)}
+.area[aria-selected="true"] .n{background:var(--sun);color:#10231C}
+.area[aria-selected="true"] svg{opacity:1;transform:none}
+.area-panel{background:var(--sage);border-radius:28px;overflow:hidden;display:flex;flex-direction:column}
+.area-art{height:300px;position:relative;display:flex;align-items:center;justify-content:center;background:#DCE8DB}
+.area-art>svg{position:absolute}
+.area-icon{position:relative;width:96px;height:96px;color:var(--forest)}
+.area-body{padding:36px 40px;display:flex;flex-direction:column;gap:14px}
+.area-body h3{font-size:2.25rem}
+.area-body p{margin:0;font-size:1.0625rem;line-height:1.6;color:var(--muted)}
+.area-body .ctas .btn{min-height:48px;padding:0 22px;font-size:.9375rem}
+.btn-white{background:#fff;color:var(--forest)}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:8fr 4fr;gap:20px;height:480px}
+.gallery>a,.gallery .col>a{border-radius:24px;text-decoration:none;color:var(--ink);display:block}
+.gallery .col{display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:20px}
+.caption small{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber)}
+.caption b{font-family:var(--disp);font-size:1.125rem}
+
+/* net zero */
+.nz{background:var(--pine);color:#F6F7F2;position:relative;overflow:hidden}
+.nz .deco{position:absolute;right:-160px;top:-180px;opacity:.5;pointer-events:none}
+.nz .top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;position:relative;margin-bottom:56px}
+.nz .eyebrow{color:var(--sunlt)}
+.nz .top>p{margin:0;align-self:flex-end;font-size:1.125rem;line-height:1.65;color:#C9D8CD}
+.timeline{position:relative;height:72px;margin-bottom:32px}
+.timeline .base{position:absolute;left:11px;right:11px;top:10px;height:2px;background:#2C5A48}
+.timeline .fill{position:absolute;left:11px;top:9px;height:4px;border-radius:999px;background:var(--sunlt);transition:width .7s cubic-bezier(.2,.7,.2,1);width:0}
+.mile{position:absolute;top:0;display:flex;flex-direction:column;gap:10px;background:transparent;border:0;padding:0;cursor:pointer;min-width:44px;min-height:44px;color:#C9D8CD}
+.mile:nth-of-type(1){left:0;align-items:flex-start}
+.mile:nth-of-type(2){left:50%;transform:translateX(-50%);align-items:center}
+.mile:nth-of-type(3){right:0;align-items:flex-end}
+.mile i{width:22px;height:22px;border-radius:999px;background:var(--pine);border:2px solid #4E7A67;transition:all .35s;display:block}
+.mile.done i{background:var(--sunlt);border-color:var(--sunlt)}
+.mile[aria-pressed="true"] i{box-shadow:0 0 0 8px rgba(240,198,116,.22)}
+.mile b{font-family:var(--disp);font-size:1.375rem;font-weight:600;transition:color .3s}
+.mile[aria-pressed="true"] b{color:var(--sunlt)}
+.mile-card{display:grid;grid-template-columns:3fr 7fr;gap:40px;align-items:center;background:var(--pine2);border:1px solid #24503F;border-radius:24px;padding:32px 40px}
+.mile-card .big{font-family:var(--disp);font-size:clamp(3.5rem,7vw,5.5rem);font-weight:600;line-height:1;letter-spacing:-.04em;color:var(--sunlt)}
+.mile-card b{font-family:var(--disp);font-size:1.625rem;display:block;margin-bottom:8px}
+.mile-card p{margin:0;font-size:1.0625rem;line-height:1.6;color:#C9D8CD}
+
+/* news + vendors */
+.nv{display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:start}
+.news-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px}
+.news-head h2{font-size:2.5rem}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.news-card{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:var(--ink)}
+.news-card .zoom{height:240px}
+.news-card .body{padding:24px;display:flex;flex-direction:column;gap:10px}
+.news-card .meta{font-size:.8125rem;font-weight:600;color:var(--amber)}
+.news-card .title{font-family:var(--disp);font-size:1.3125rem;font-weight:600;line-height:1.3}
+.news-card .more{font-size:.9375rem;color:var(--muted)}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:999px;background:var(--forest);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(31,92,69,.18);z-index:2}
+.vendors{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.vendors-head{display:flex;justify-content:space-between;align-items:center}
+.vendors-head h2{font-size:1.75rem}
+.tabs{display:flex;gap:6px;background:var(--mist);border-radius:12px;padding:4px}
+.tab{flex:1;min-height:44px;border:0;border-radius:9px;font-size:.875rem;font-weight:600;cursor:pointer;background:transparent;color:var(--muted);transition:all .25s}
+.tab[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(16,35,28,.15)}
+.tender{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 10px;border-bottom:1px solid #E6ECE5;text-decoration:none;color:var(--ink);border-radius:8px;transition:background .25s,padding .25s}
+.tender:hover{background:var(--mist);padding-left:16px;color:var(--ink)}
+.tender small{display:block;font-size:.75rem;font-weight:600;color:var(--soft)}
+.tender b{font-size:1rem}
+.tender .right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.tender .close{font-size:.8125rem;color:var(--amber);font-weight:600;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.new{font-size:.6875rem;font-weight:700;letter-spacing:.06em;color:#10231C;background:var(--sun);padding:2px 8px;border-radius:999px}
+.pdf{width:36px;height:36px;border-radius:10px;background:var(--mist);color:var(--forest);display:flex;align-items:center;justify-content:center}
+.small-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.date-row{display:flex;gap:10px;align-items:flex-end}
+.date-row label{display:flex;flex-direction:column;gap:4px;font-size:.75rem;color:var(--muted);flex:1}
+.date-row input{min-height:44px;border:1px solid var(--line2);border-radius:10px;padding:0 10px;font-size:.875rem;color:var(--ink);background:var(--ground);width:100%}
+.date-row button,.alert-row button{min-height:44px;padding:0 16px;border:0;border-radius:10px;background:var(--forest);color:#fff;font-weight:600;font-size:.875rem;cursor:pointer}
+.alerts{background:var(--sand);border-radius:16px;padding:16px 18px}
+.alerts label{font-size:.875rem;font-weight:700;display:block;margin-bottom:8px}
+.alert-row{display:flex;gap:8px}
+.alert-row input{flex:1;min-width:0;min-height:44px;border:1px solid #E0CFA6;border-radius:10px;padding:0 12px;font-size:.875rem;background:#fff;color:var(--ink)}
+.alert-row button{background:var(--ink)}
+.err{font-size:.8125rem;color:#9A3412;font-weight:600;margin-top:6px;display:block}.err[hidden]{display:none}
+.ok{display:flex;align-items:center;gap:12px;min-height:76px}
+.ok>span:first-child{width:40px;height:40px;flex-shrink:0;border-radius:999px;background:var(--forest);display:flex;align-items:center;justify-content:center;animation:pop .5s both}
+
+/* explore */
+.explore{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.ex{display:flex;flex-direction:column;justify-content:space-between;min-height:300px;padding:28px;border-radius:24px;text-decoration:none;color:var(--ink)}
+.ex small{font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.ex b{font-family:var(--disp);font-size:1.625rem;font-weight:600;line-height:1.2;display:block;margin-bottom:8px}
+.ex span{font-size:.9375rem;color:var(--muted)}
+.ex .go{font-size:1.375rem}
+
+/* leadership */
+.lead-box{display:grid;grid-template-columns:4fr 8fr;background:var(--sand);border-radius:28px;overflow:hidden;min-height:360px}
+.lead-box .zoom{min-height:300px}
+.lead-body{padding:48px 56px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.lead-body q{font-family:var(--disp);font-size:1.875rem;line-height:1.3;font-weight:500}
+.lead-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+
+/* footer */
+footer{background:var(--night);color:#C9D8CD;padding:80px 0 32px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:56px}
+.fgrid h4{margin:0 0 4px;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sunlt)}
+.fcol{display:flex;flex-direction:column;gap:12px;font-size:.9375rem}
+.fcol a,footer .social a{color:#C9D8CD;text-decoration:none}.fcol a:hover{color:#fff;text-decoration:underline}
+.social{display:flex;gap:8px;flex-wrap:wrap}
+.social a{min-height:36px;padding:0 14px;display:flex;align-items:center;border:1px solid #2C4A3E;border-radius:999px;font-size:.8125rem;transition:background .25s}
+.social a:hover{background:#173D30}
+.fbar{border-top:1px solid #22392F;padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:.8125rem;color:#9FB3A7;flex-wrap:wrap}
+.totop{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--forest);color:#F6F7F2!important;text-decoration:none;font-size:.875rem;font-weight:600}
+
+/* responsive */
+@media (max-width:1240px){
+  .mainnav>ul{gap:14px;font-size:.875rem}
+  .brand small{display:none}
+}
+@media (max-width:1100px){
+  :root{--pad:32px}
+  .mainnav{display:none}
+  .menu-btn{display:inline-flex}
+  .hero .wrap{grid-template-columns:1fr;min-height:0;padding-bottom:0}
+  .slide{min-height:0}
+  .explorer,.nv,.role-panel,.lead-box{grid-template-columns:minmax(0,1fr)}
+  .explore{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fgrid>div:first-child{grid-column:1/-1}
+  .area[aria-selected="true"]{transform:none}
+}
+@media (max-width:720px){
+  :root{--pad:16px}
+  .sec{padding:56px 0}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:28px}
+  .util .hide-sm,.util .wrap>span{display:none}
+  .util .wrap{justify-content:flex-end;padding-top:6px;padding-bottom:6px}
+  .ctas{flex-direction:column}
+  .site .wrap{height:68px}
+  .brand svg{width:40px;height:40px}.brand b{font-size:.9375rem}
+  .hero .wrap{padding-top:32px}
+  .hero p{font-size:1rem}
+  .ctas .btn{flex:1}
+  .focus-chip{top:8px}
+  .tiles{grid-template-columns:1fr 1fr}
+  .tile{min-height:64px;padding:0 14px;font-size:.875rem}
+  .area{min-height:68px;padding:0 14px;gap:12px}.area .t{font-size:1.0625rem}
+  .area-art{height:200px}.area-body{padding:24px}
+  .area-body h3{font-size:1.625rem}
+  .gallery{grid-template-columns:1fr;height:auto}
+  .gallery>a{height:260px}.gallery .col{grid-template-rows:none;grid-template-columns:1fr 1fr}.gallery .col>a{height:180px}
+  .nz .top{grid-template-columns:1fr;gap:16px;margin-bottom:32px}
+  .mile-card{grid-template-columns:1fr;gap:12px;padding:24px}
+  .news-grid,.explore,.results{grid-template-columns:minmax(0,1fr)}
+  .news-card .zoom{height:200px}
+  .date-row{flex-wrap:wrap}
+  .lead-body{padding:28px}.lead-body q{font-size:1.375rem}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .ticker .label{padding-right:12px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="util">
+  <div class="wrap">
+    <span data-i18n="parentLine">A wholly owned subsidiary of Oil India Limited</span>
+    <div class="util-r">
+      <a href="#main" class="hide-sm" data-i18n="skip">Skip to main content</a>
+      <span class="sep hide-sm"></span>
+      <a href="#main" class="hide-sm" data-i18n="reader">Screen reader access</a>
+      <span class="sep hide-sm"></span>
+      <div role="group" aria-label="Text size" style="display:flex;gap:4px">
+        <button type="button" class="ubtn" data-ts="sm" aria-label="Decrease text size" aria-pressed="false">A−</button>
+        <button type="button" class="ubtn" data-ts="md" aria-label="Normal text size" aria-pressed="true">A</button>
+        <button type="button" class="ubtn" data-ts="lg" aria-label="Increase text size" aria-pressed="false">A+</button>
+      </div>
+      <button type="button" class="ubtn" id="hcBtn" aria-pressed="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3 A9 9 0 0 1 12 21 Z" fill="currentColor"></path></svg><span data-i18n="contrast">Contrast</span></button>
+      <span class="sep"></span>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">English</button>
+        <button type="button" data-lang="hi" aria-pressed="false">हिंदी</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="OIL Green Energy Limited home">
+      <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true">
+<g class="orbit"><circle cx="32" cy="36" r="27" fill="none" stroke="#E0A43A" stroke-width="3" stroke-linecap="round" stroke-dasharray="58 200" transform="rotate(-205 32 36)"></circle></g>
+<path d="M32 8 C32 8 15 29 15 41 A17 17 0 0 0 49 41 C49 29 32 8 32 8 Z" fill="#1F5C45"></path>
+<path d="M24 50 C24 38 32 30 42 28 C42 40 35 49 24 50 Z" fill="#9CC9A0"></path>
+<path d="M25.5 48.5 L37.5 33.5" stroke="#1F5C45" stroke-width="1.8" stroke-linecap="round"></path>
+</svg>
+      <span><b>OIL Green Energy Limited</b><small>ऑयल ग्रीन एनर्जी लिमिटेड</small></span>
+    </a>
+    <nav class="mainnav" aria-label="Main"><ul id="navList"></ul></nav>
+    <div class="head-actions">
+      <button type="button" class="icon-btn" id="searchBtn" aria-label="Search the website"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20 L16 16"></path></svg></button>
+      <button type="button" class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7 H20 M4 12 H20 M4 17 H14"></path></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<a id="top"></a>
+
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="Highlights">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="slide swap" id="slide" aria-live="polite">
+        <div class="badge"><i class="ping"></i><span data-s="eyebrow"></span></div>
+        <h1 data-s="title"></h1>
+        <p data-s="sub"></p>
+        <div class="ctas">
+          <a href="#business" class="btn btn-primary"><span data-i18n="cta">Explore our business</span><svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 H19"></path><path d="M13 6 L19 12 L13 18"></path></svg></a>
+          <a href="#about" class="btn btn-ghost" data-i18n="cta2">About OGEL</a>
+        </div>
+      </div>
+      <div class="controls">
+        <button type="button" class="icon-btn" id="prevBtn" aria-label="Previous slide"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6 L9 12 L15 18"></path></svg></button>
+        <div class="dots" id="dots" role="group" aria-label="Choose slide"></div>
+        <button type="button" class="icon-btn" id="nextBtn" aria-label="Next slide"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 L15 12 L9 18"></path></svg></button>
+        <button type="button" class="icon-btn" id="pauseBtn" aria-label="Pause slideshow" style="background:var(--sage);border:0"></button>
+        <span class="count" id="count">01 / 03</span>
+      </div>
+    </div>
+    <div class="hero-art" id="heroArt">
+      <div class="focus-chip swap" id="chip"><div><span class="num" id="chipNum">01</span><span><small data-i18n="focus">Focus area</small><b id="chipText"></b></span></div></div>
+      <svg viewBox="0 0 600 580" aria-hidden="true" style="display: block">
+<g data-px="sun">
+<circle class="breathe" cx="340" cy="230" r="190" fill="#F1E6C8"></circle>
+<circle cx="340" cy="230" r="92" fill="#EDD39A" opacity="0.55"></circle>
+<g data-hl="0"><g class="orbit-r"><circle cx="340" cy="230" r="128" fill="none" stroke="#E0A43A" stroke-width="2" stroke-dasharray="2 14" stroke-linecap="round"></circle></g></g>
+<g class="orbit">
+<circle cx="340" cy="230" r="232" fill="none" stroke="#B9CDBD" stroke-width="1.5" stroke-dasharray="3 9"></circle>
+<circle cx="340" cy="-2" r="11" fill="#2F7E86"></circle>
+<circle cx="357" cy="4" r="7" fill="#7FB3B8"></circle>
+<circle cx="340" cy="462" r="9" fill="#E0A43A"></circle>
+<circle cx="108" cy="230" r="7" fill="#1F5C45"></circle>
+</g>
+</g>
+<g data-px="back">
+<path d="M-30 420 C120 360 240 382 330 400 C430 420 520 368 630 378 L630 600 L-30 600 Z" fill="#D6E3D2"></path>
+</g>
+<g data-px="mid">
+<path d="M196 196 L204 196 L210 452 L190 452 Z" fill="#FFFFFF" stroke="#B9CDBD" stroke-width="1.5"></path>
+<g class="spin">
+<circle cx="200" cy="192" r="86" fill="none"></circle>
+<path d="M200 192 C206 160 206 132 200 106 C194 132 194 160 200 192 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1.5"></path>
+<path d="M200 192 C206 160 206 132 200 106 C194 132 194 160 200 192 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1.5" transform="rotate(120 200 192)"></path>
+<path d="M200 192 C206 160 206 132 200 106 C194 132 194 160 200 192 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1.5" transform="rotate(240 200 192)"></path>
+</g>
+<circle cx="200" cy="192" r="7" fill="#1F5C45"></circle>
+<path d="M468 272 L474 272 L478 440 L464 440 Z" fill="#FFFFFF" stroke="#B9CDBD" stroke-width="1.5"></path>
+<g class="spin-slow">
+<circle cx="471" cy="269" r="60" fill="none"></circle>
+<path d="M471 269 C475 247 475 228 471 210 C467 228 467 247 471 269 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1.5"></path>
+<path d="M471 269 C475 247 475 228 471 210 C467 228 467 247 471 269 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1.5" transform="rotate(120 471 269)"></path>
+<path d="M471 269 C475 247 475 228 471 210 C467 228 467 247 471 269 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1.5" transform="rotate(240 471 269)"></path>
+</g>
+<circle cx="471" cy="269" r="5" fill="#1F5C45"></circle>
+</g>
+<g data-px="front">
+<path d="M-40 470 C140 432 260 472 380 456 C480 443 540 462 640 452 L640 600 L-40 600 Z" fill="#AFC9AE"></path>
+<g data-hl="1"><circle class="pulse-ring" cx="355" cy="440" r="56" fill="none" stroke="#2F7E86" stroke-width="2"></circle></g>
+<g class="floaty">
+<rect x="318" y="392" width="74" height="96" rx="37" fill="#FFFFFF" stroke="#8FB0B3" stroke-width="1.5"></rect>
+<text x="355" y="450" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="24" font-weight="700" fill="#2F7E86">H₂</text>
+</g>
+<polygon points="40,492 140,492 158,528 58,528" fill="#1F4E5A"></polygon>
+<path d="M73 492 L91 528 M106 492 L124 528 M49 510 L149 510" stroke="#6E98A0" stroke-width="1.2"></path>
+<polygon points="160,500 250,500 266,532 176,532" fill="#1F4E5A"></polygon>
+<path d="M190 500 L206 532 M220 500 L236 532 M168 516 L258 516" stroke="#6E98A0" stroke-width="1.2"></path>
+<path d="M-40 530 C160 512 300 540 640 516 L640 600 L-40 600 Z" fill="#2E6B52"></path>
+<g data-hl="2">
+<rect x="430" y="330" width="130" height="56" rx="28" fill="#12372A"></rect>
+<text x="495" y="365" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="20" font-weight="700" fill="#F0C674">Net 0 · 2040</text>
+</g>
+</g>
+</svg>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" role="region" aria-label="Latest updates">
+  <div class="label"><span data-i18n="latest">Latest</span></div>
+  <div class="track"><div class="marquee">
+    <a href="#news">[Press release headline] — [DD Mon YYYY]</a><i>●</i>
+    <a href="#vendors">[New tender notification: reference no.]</a><i>●</i>
+    <a href="#">[Current opening: position title]</a><i>●</i>
+    <a href="#">[CSR event update]</a><i>●</i>
+    <a href="#news" aria-hidden="true" tabindex="-1">[Press release headline] — [DD Mon YYYY]</a><i>●</i>
+    <a href="#vendors" aria-hidden="true" tabindex="-1">[New tender notification: reference no.]</a><i>●</i>
+    <a href="#" aria-hidden="true" tabindex="-1">[Current opening: position title]</a><i>●</i>
+    <a href="#" aria-hidden="true" tabindex="-1">[CSR event update]</a><i>●</i>
+  </div></div>
+</div>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><p class="eyebrow">I am a…</p><h2 class="h2">How can we help you today?</h2></div>
+      <p class="lead">Pick who you are and we’ll bring the pages you need to the front.</p>
+    </div>
+    <div class="roles reveal" id="roles" role="group" aria-label="Choose your role"></div>
+    <div class="role-panel reveal">
+      <div class="role-card swap" id="roleCard"></div>
+      <div class="tiles swap" id="roleTiles"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="business" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><p class="eyebrow">Our business</p><h2 class="h2" style="max-width:680px">Six pathways to a decarbonised future</h2></div>
+      <p class="lead">Calibrated investments in the technologies that directly or indirectly support decarbonisation. Select a pathway to explore it.</p>
+    </div>
+    <div class="explorer reveal">
+      <div class="areas" id="areas" role="tablist" aria-label="Business pathways"></div>
+      <div class="area-panel" role="tabpanel" id="areaPanel">
+        <div class="area-art">
+          <svg width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+            <g class="orbit"><circle cx="150" cy="150" r="136" fill="none" stroke="#B9CDBD" stroke-width="1.5" stroke-dasharray="3 9"></circle><circle cx="150" cy="14" r="7" fill="#E0A43A"></circle></g>
+            <g class="orbit-r"><circle cx="150" cy="150" r="104" fill="none" stroke="#C9D7C8" stroke-width="1.5"></circle><circle cx="46" cy="150" r="5" fill="#2F7E86"></circle></g>
+            <circle cx="150" cy="150" r="72" fill="#FFFFFF"></circle>
+          </svg>
+          <div class="area-icon" id="areaIcon"></div>
+        </div>
+        <div class="area-body swap" id="areaBody"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><p class="eyebrow">Projects in pictures</p><h2 class="h2" style="font-size:2.5rem">Where the transition takes shape</h2></div>
+      <a href="#" style="font-weight:600">Photo gallery →</a>
+    </div>
+    <div class="gallery reveal">
+      <a href="#" class="zoom"><div class="zin"><svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"><defs><linearGradient id="gA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9DED8"></stop><stop offset="0.7" stop-color="#F4DDB0"></stop></linearGradient></defs><rect width="800" height="450" fill="url(#gA)"></rect><circle class="breathe" cx="590" cy="190" r="90" fill="#F6D58E" opacity="0.5"></circle><circle cx="590" cy="190" r="52" fill="#F2C46B"></circle><g class="drift"><ellipse cx="180" cy="90" rx="70" ry="14" fill="#FFFFFF" opacity="0.7"></ellipse><ellipse cx="420" cy="60" rx="50" ry="10" fill="#FFFFFF" opacity="0.6"></ellipse></g><path d="M0 262 C120 230 240 250 360 240 C480 230 620 214 800 236 L800 450 L0 450 Z" fill="#B9CDB5"></path><path d="M118.9375 196 L121.0625 196 L122.125 262 L117.875 262 Z" fill="#FFFFFF" stroke="#B9CDBD" stroke-width="1"></path><g class="spin"><circle cx="120" cy="196" r="34" fill="none"></circle><path d="M120 196 C123 184.1 123 172.2 120 162 C117 172.2 117 184.1 120 196 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1"></path><path d="M120 196 C123 184.1 123 172.2 120 162 C117 172.2 117 184.1 120 196 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1" transform="rotate(120 120 196)"></path><path d="M120 196 C123 184.1 123 172.2 120 162 C117 172.2 117 184.1 120 196 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1" transform="rotate(240 120 196)"></path></g><circle cx="120" cy="196" r="2.4" fill="#1F5C45"></circle><path d="M209.0 210 L211.0 210 L212 258 L208 258 Z" fill="#FFFFFF" stroke="#B9CDBD" stroke-width="1"></path><g class="spin-slow"><circle cx="210" cy="210" r="26" fill="none"></circle><path d="M210 210 C213 200.9 213 191.8 210 184 C207 191.8 207 200.9 210 210 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1"></path><path d="M210 210 C213 200.9 213 191.8 210 184 C207 191.8 207 200.9 210 210 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1" transform="rotate(120 210 210)"></path><path d="M210 210 C213 200.9 213 191.8 210 184 C207 191.8 207 200.9 210 210 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1" transform="rotate(240 210 210)"></path></g><circle cx="210" cy="210" r="2.0" fill="#1F5C45"></circle><path d="M698.8125 190 L701.1875 190 L702.375 240 L697.625 240 Z" fill="#FFFFFF" stroke="#B9CDBD" stroke-width="1"></path><g class="spin"><circle cx="700" cy="190" r="38" fill="none"></circle><path d="M700 190 C703 176.7 703 163.4 700 152 C697 163.4 697 176.7 700 190 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1"></path><path d="M700 190 C703 176.7 703 163.4 700 152 C697 163.4 697 176.7 700 190 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1" transform="rotate(120 700 190)"></path><path d="M700 190 C703 176.7 703 163.4 700 152 C697 163.4 697 176.7 700 190 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1" transform="rotate(240 700 190)"></path></g><circle cx="700" cy="190" r="2.7" fill="#1F5C45"></circle><path d="M0 290 C200 276 400 296 800 282 L800 450 L0 450 Z" fill="#9DBB9A"></path><polygon points="-20,300 18,300 26,314 -13,314" fill="#1F4E5A"></polygon><path d="M-7 300 L-0 314 M6 300 L13 314 M-16 307.0 L22 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="6" y1="314" x2="6" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="25,300 64,300 71,314 32,314" fill="#1F4E5A"></polygon><path d="M38 300 L45 314 M51 300 L58 314 M29 307.0 L67 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="51" y1="314" x2="51" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="70,300 109,300 116,314 77,314" fill="#1F4E5A"></polygon><path d="M83 300 L90 314 M96 300 L103 314 M74 307.0 L112 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="96" y1="314" x2="96" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="115,300 154,300 161,314 122,314" fill="#1F4E5A"></polygon><path d="M128 300 L135 314 M141 300 L148 314 M119 307.0 L157 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="142" y1="314" x2="142" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="160,300 199,300 206,314 167,314" fill="#1F4E5A"></polygon><path d="M173 300 L180 314 M186 300 L193 314 M164 307.0 L202 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="187" y1="314" x2="187" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="206,300 244,300 251,314 212,314" fill="#1F4E5A"></polygon><path d="M218 300 L225 314 M231 300 L238 314 M209 307.0 L248 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="232" y1="314" x2="232" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="251,300 289,300 296,314 258,314" fill="#1F4E5A"></polygon><path d="M263 300 L270 314 M276 300 L283 314 M254 307.0 L293 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="277" y1="314" x2="277" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="296,300 334,300 341,314 303,314" fill="#1F4E5A"></polygon><path d="M309 300 L316 314 M321 300 L328 314 M299 307.0 L338 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="322" y1="314" x2="322" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="341,300 379,300 386,314 348,314" fill="#1F4E5A"></polygon><path d="M354 300 L361 314 M366 300 L373 314 M344 307.0 L383 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="367" y1="314" x2="367" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="386,300 424,300 431,314 393,314" fill="#1F4E5A"></polygon><path d="M399 300 L406 314 M412 300 L419 314 M389 307.0 L428 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="412" y1="314" x2="412" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="431,300 470,300 477,314 438,314" fill="#1F4E5A"></polygon><path d="M444 300 L451 314 M457 300 L464 314 M435 307.0 L473 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="457" y1="314" x2="457" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="476,300 515,300 522,314 483,314" fill="#1F4E5A"></polygon><path d="M489 300 L496 314 M502 300 L509 314 M480 307.0 L518 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="502" y1="314" x2="502" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="521,300 560,300 567,314 528,314" fill="#1F4E5A"></polygon><path d="M534 300 L541 314 M547 300 L554 314 M525 307.0 L563 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="547" y1="314" x2="547" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="566,300 605,300 612,314 573,314" fill="#1F4E5A"></polygon><path d="M579 300 L586 314 M592 300 L599 314 M570 307.0 L608 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="593" y1="314" x2="593" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="611,300 650,300 657,314 618,314" fill="#1F4E5A"></polygon><path d="M624 300 L631 314 M637 300 L644 314 M615 307.0 L653 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="638" y1="314" x2="638" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="657,300 695,300 702,314 664,314" fill="#1F4E5A"></polygon><path d="M669 300 L676 314 M682 300 L689 314 M660 307.0 L699 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="683" y1="314" x2="683" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="702,300 740,300 747,314 709,314" fill="#1F4E5A"></polygon><path d="M714 300 L721 314 M727 300 L734 314 M705 307.0 L744 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="728" y1="314" x2="728" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="747,300 785,300 792,314 754,314" fill="#1F4E5A"></polygon><path d="M760 300 L767 314 M772 300 L779 314 M750 307.0 L789 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="773" y1="314" x2="773" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="792,300 830,300 837,314 799,314" fill="#1F4E5A"></polygon><path d="M805 300 L812 314 M817 300 L824 314 M795 307.0 L834 307.0" stroke="#6E98A0" stroke-width="0.3"></path><line x1="818" y1="314" x2="818" y2="317" stroke="#4A5C54" stroke-width="1"></line><polygon points="-11,322 38,322 47,340 -2,340" fill="#1F4E5A"></polygon><path d="M5 322 L14 340 M22 322 L31 340 M-6 331.0 L42 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="22" y1="340" x2="22" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="46,322 95,322 104,340 55,340" fill="#1F4E5A"></polygon><path d="M63 322 L72 340 M79 322 L88 340 M51 331.0 L100 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="80" y1="340" x2="80" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="104,322 153,322 162,340 113,340" fill="#1F4E5A"></polygon><path d="M120 322 L129 340 M136 322 L145 340 M108 331.0 L157 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="137" y1="340" x2="137" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="161,322 210,322 219,340 170,340" fill="#1F4E5A"></polygon><path d="M178 322 L187 340 M194 322 L203 340 M166 331.0 L215 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="195" y1="340" x2="195" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="219,322 268,322 277,340 228,340" fill="#1F4E5A"></polygon><path d="M235 322 L244 340 M251 322 L260 340 M223 331.0 L272 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="252" y1="340" x2="252" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="276,322 325,322 334,340 285,340" fill="#1F4E5A"></polygon><path d="M292 322 L301 340 M309 322 L318 340 M280 331.0 L330 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="310" y1="340" x2="310" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="333,322 382,322 391,340 342,340" fill="#1F4E5A"></polygon><path d="M350 322 L359 340 M366 322 L375 340 M338 331.0 L387 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="367" y1="340" x2="367" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="391,322 440,322 449,340 400,340" fill="#1F4E5A"></polygon><path d="M407 322 L416 340 M423 322 L432 340 M395 331.0 L444 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="424" y1="340" x2="424" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="448,322 497,322 506,340 457,340" fill="#1F4E5A"></polygon><path d="M465 322 L474 340 M481 322 L490 340 M453 331.0 L502 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="482" y1="340" x2="482" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="506,322 555,322 564,340 515,340" fill="#1F4E5A"></polygon><path d="M522 322 L531 340 M538 322 L547 340 M510 331.0 L559 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="539" y1="340" x2="539" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="563,322 612,322 621,340 572,340" fill="#1F4E5A"></polygon><path d="M579 322 L588 340 M596 322 L605 340 M567 331.0 L616 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="596" y1="340" x2="596" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="620,322 669,322 678,340 629,340" fill="#1F4E5A"></polygon><path d="M637 322 L646 340 M653 322 L662 340 M625 331.0 L674 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="654" y1="340" x2="654" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="678,322 727,322 736,340 687,340" fill="#1F4E5A"></polygon><path d="M694 322 L703 340 M710 322 L719 340 M682 331.0 L731 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="711" y1="340" x2="711" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="735,322 784,322 793,340 744,340" fill="#1F4E5A"></polygon><path d="M752 322 L761 340 M768 322 L777 340 M740 331.0 L789 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="769" y1="340" x2="769" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="793,322 842,322 851,340 802,340" fill="#1F4E5A"></polygon><path d="M809 322 L818 340 M825 322 L834 340 M797 331.0 L846 331.0" stroke="#6E98A0" stroke-width="0.4"></path><line x1="826" y1="340" x2="826" y2="344" stroke="#4A5C54" stroke-width="1"></line><polygon points="-2,350 60,350 72,374 10,374" fill="#1F4E5A"></polygon><path d="M19 350 L31 374 M39 350 L51 374 M4 362.0 L66 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="41" y1="374" x2="41" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="70,350 132,350 144,374 82,374" fill="#1F4E5A"></polygon><path d="M91 350 L103 374 M111 350 L123 374 M76 362.0 L138 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="113" y1="374" x2="113" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="142,350 204,350 216,374 154,374" fill="#1F4E5A"></polygon><path d="M163 350 L175 374 M183 350 L195 374 M148 362.0 L210 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="185" y1="374" x2="185" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="214,350 276,350 288,374 226,374" fill="#1F4E5A"></polygon><path d="M235 350 L247 374 M256 350 L268 374 M220 362.0 L282 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="257" y1="374" x2="257" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="287,350 348,350 360,374 299,374" fill="#1F4E5A"></polygon><path d="M307 350 L319 374 M328 350 L340 374 M293 362.0 L354 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="329" y1="374" x2="329" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="359,350 420,350 432,374 371,374" fill="#1F4E5A"></polygon><path d="M379 350 L391 374 M400 350 L412 374 M365 362.0 L426 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="402" y1="374" x2="402" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="431,350 493,350 505,374 443,374" fill="#1F4E5A"></polygon><path d="M451 350 L463 374 M472 350 L484 374 M437 362.0 L499 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="474" y1="374" x2="474" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="503,350 565,350 577,374 515,374" fill="#1F4E5A"></polygon><path d="M524 350 L536 374 M544 350 L556 374 M509 362.0 L571 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="546" y1="374" x2="546" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="575,350 637,350 649,374 587,374" fill="#1F4E5A"></polygon><path d="M596 350 L608 374 M616 350 L628 374 M581 362.0 L643 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="618" y1="374" x2="618" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="647,350 709,350 721,374 659,374" fill="#1F4E5A"></polygon><path d="M668 350 L680 374 M689 350 L701 374 M653 362.0 L715 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="690" y1="374" x2="690" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="720,350 781,350 793,374 732,374" fill="#1F4E5A"></polygon><path d="M740 350 L752 374 M761 350 L773 374 M726 362.0 L787 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="762" y1="374" x2="762" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="792,350 853,350 865,374 804,374" fill="#1F4E5A"></polygon><path d="M812 350 L824 374 M833 350 L845 374 M798 362.0 L859 362.0" stroke="#6E98A0" stroke-width="0.5"></path><line x1="835" y1="374" x2="835" y2="379" stroke="#4A5C54" stroke-width="1"></line><polygon points="7,386 84,386 100,418 23,418" fill="#1F4E5A"></polygon><path d="M33 386 L49 418 M58 386 L74 418 M15 402.0 L92 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="62" y1="418" x2="62" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="97,386 174,386 190,418 113,418" fill="#1F4E5A"></polygon><path d="M123 386 L139 418 M149 386 L165 418 M105 402.0 L182 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="152" y1="418" x2="152" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="187,386 264,386 280,418 203,418" fill="#1F4E5A"></polygon><path d="M213 386 L229 418 M239 386 L255 418 M195 402.0 L272 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="242" y1="418" x2="242" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="278,386 355,386 371,418 294,418" fill="#1F4E5A"></polygon><path d="M303 386 L319 418 M329 386 L345 418 M286 402.0 L363 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="332" y1="418" x2="332" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="368,386 445,386 461,418 384,418" fill="#1F4E5A"></polygon><path d="M393 386 L409 418 M419 386 L435 418 M376 402.0 L453 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="422" y1="418" x2="422" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="458,386 535,386 551,418 474,418" fill="#1F4E5A"></polygon><path d="M484 386 L500 418 M509 386 L525 418 M466 402.0 L543 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="512" y1="418" x2="512" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="548,386 625,386 641,418 564,418" fill="#1F4E5A"></polygon><path d="M574 386 L590 418 M600 386 L616 418 M556 402.0 L633 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="603" y1="418" x2="603" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="638,386 715,386 731,418 654,418" fill="#1F4E5A"></polygon><path d="M664 386 L680 418 M690 386 L706 418 M646 402.0 L723 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="693" y1="418" x2="693" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="729,386 806,386 822,418 745,418" fill="#1F4E5A"></polygon><path d="M754 386 L770 418 M780 386 L796 418 M737 402.0 L814 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="783" y1="418" x2="783" y2="425" stroke="#4A5C54" stroke-width="1"></line><polygon points="819,386 896,386 912,418 835,418" fill="#1F4E5A"></polygon><path d="M844 386 L860 418 M870 386 L886 418 M827 402.0 L904 402.0" stroke="#6E98A0" stroke-width="0.7"></path><line x1="873" y1="418" x2="873" y2="425" stroke="#4A5C54" stroke-width="1"></line><path d="M0 430 C200 418 500 440 800 424 L800 450 L0 450 Z" fill="#5E8C63"></path></svg></div><span class="demo-tag">Illustration · demo</span><span class="caption"><small>Renewable Energy</small><b>[Project name, location]</b></span></a>
+      <div class="col">
+        <a href="#" class="zoom"><div class="zin"><svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"><defs><linearGradient id="gB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3E7E8"></stop><stop offset="1" stop-color="#F3F6F0"></stop></linearGradient></defs><rect width="800" height="450" fill="url(#gB)"></rect><circle cx="660" cy="110" r="44" fill="#F2D38A" opacity="0.8"></circle><path d="M0 300 C160 280 360 300 520 288 C640 280 720 290 800 284 L800 450 L0 450 Z" fill="#C3D8C4"></path><path d="M678.75 200 L681.25 200 L682.5 300 L677.5 300 Z" fill="#FFFFFF" stroke="#B9CDBD" stroke-width="1"></path><g class="spin-slow"><circle cx="680" cy="200" r="40" fill="none"></circle><path d="M680 200 C683.0769230769231 186.0 683.0769230769231 172.0 680 160 C676.9230769230769 172.0 676.9230769230769 186.0 680 200 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1"></path><path d="M680 200 C683.0769230769231 186.0 683.0769230769231 172.0 680 160 C676.9230769230769 172.0 676.9230769230769 186.0 680 200 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1" transform="rotate(120 680 200)"></path><path d="M680 200 C683.0769230769231 186.0 683.0769230769231 172.0 680 160 C676.9230769230769 172.0 676.9230769230769 186.0 680 200 Z" fill="#FFFFFF" stroke="#9FB8A5" stroke-width="1" transform="rotate(240 680 200)"></path></g><circle cx="680" cy="200" r="2.9" fill="#1F5C45"></circle><rect x="70" y="200" width="260" height="120" rx="6" fill="#FFFFFF" stroke="#B9CDBD" stroke-width="2"></rect><polygon points="60,200 200,150 340,200" fill="#2F7E86"></polygon><rect x="100" y="236" width="44" height="30" rx="3" fill="#D3E7E8"></rect><rect x="160" y="236" width="44" height="30" rx="3" fill="#D3E7E8"></rect><rect x="220" y="236" width="44" height="30" rx="3" fill="#D3E7E8"></rect><rect x="176" y="280" width="48" height="40" fill="#1F5C45"></rect><text x="200" y="190" text-anchor="middle" font-family="Figtree, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" letter-spacing="2">ELECTROLYSER</text><path d="M330 260 H400 V230 H430" fill="none" stroke="#8FB0B3" stroke-width="6" stroke-linecap="round"></path><g class="floaty"><rect x="420" y="190" width="200" height="80" rx="40" fill="#FFFFFF" stroke="#8FB0B3" stroke-width="3"></rect><text x="520" y="242" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="38" font-weight="700" fill="#2F7E86">H₂</text></g><rect x="440" y="270" width="10" height="50" fill="#8FB0B3"></rect><rect x="590" y="270" width="10" height="50" fill="#8FB0B3"></rect><polygon points="40,360 170,360 190,392 60,392" fill="#1F4E5A"></polygon><polygon points="200,360 330,360 350,392 220,392" fill="#1F4E5A"></polygon><polygon points="360,360 490,360 510,392 380,392" fill="#1F4E5A"></polygon><path d="M0 410 C200 400 500 420 800 404 L800 450 L0 450 Z" fill="#5E8C63"></path></svg></div><span class="demo-tag">Illustration · demo</span><span class="caption" style="left:14px;bottom:14px;padding:8px 12px"><b style="font-size:.9375rem">[Project name]</b></span></a>
+        <a href="#" class="zoom"><div class="zin"><svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"><defs><linearGradient id="gC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6E6C6"></stop><stop offset="1" stop-color="#F6F7F2"></stop></linearGradient></defs><rect width="800" height="450" fill="url(#gC)"></rect><circle cx="400" cy="150" r="70" fill="#F2C46B" opacity="0.6"></circle><path d="M0 240 C200 210 420 236 800 214 L800 450 L0 450 Z" fill="#C3D8C4"></path><rect x="90" y="250" width="100" height="80" fill="#F3EBD8" stroke="#D5C7A6" stroke-width="1.5"></rect><polygon points="80,252 140,206 200,252" fill="#C86F4B"></polygon><rect x="128" y="290" width="24" height="40" fill="#1F5C45"></rect><rect x="102" y="266" width="18" height="16" fill="#D3E7E8"></rect><rect x="160" y="266" width="18" height="16" fill="#D3E7E8"></rect><rect x="230" y="250" width="100" height="80" fill="#FFFFFF" stroke="#D5C7A6" stroke-width="1.5"></rect><polygon points="220,252 280,206 340,252" fill="#8A5A0B"></polygon><rect x="268" y="290" width="24" height="40" fill="#1F5C45"></rect><rect x="242" y="266" width="18" height="16" fill="#D3E7E8"></rect><rect x="300" y="266" width="18" height="16" fill="#D3E7E8"></rect><rect x="520" y="250" width="100" height="80" fill="#F3EBD8" stroke="#D5C7A6" stroke-width="1.5"></rect><polygon points="510,252 570,206 630,252" fill="#C86F4B"></polygon><rect x="558" y="290" width="24" height="40" fill="#1F5C45"></rect><rect x="532" y="266" width="18" height="16" fill="#D3E7E8"></rect><rect x="590" y="266" width="18" height="16" fill="#D3E7E8"></rect><rect x="650" y="250" width="100" height="80" fill="#FFFFFF" stroke="#D5C7A6" stroke-width="1.5"></rect><polygon points="640,252 700,206 760,252" fill="#2F7E86"></polygon><rect x="688" y="290" width="24" height="40" fill="#1F5C45"></rect><rect x="662" y="266" width="18" height="16" fill="#D3E7E8"></rect><rect x="720" y="266" width="18" height="16" fill="#D3E7E8"></rect><rect x="37" y="290" width="6" height="40" fill="#6B5A3E"></rect><circle cx="40" cy="282" r="26" fill="#7FA97F"></circle><rect x="377" y="286" width="6" height="40" fill="#6B5A3E"></rect><circle cx="380" cy="278" r="30" fill="#5E8C63"></circle><rect x="447" y="296" width="6" height="40" fill="#6B5A3E"></rect><circle cx="450" cy="288" r="22" fill="#9CC9A0"></circle><rect x="767" y="290" width="6" height="40" fill="#6B5A3E"></rect><circle cx="770" cy="282" r="28" fill="#7FA97F"></circle><rect x="200" y="232" width="4" height="110" fill="#4A5C54"></rect><polygon points="184,226 220,226 224,236 188,236" fill="#1F4E5A"></polygon><circle class="ping-svg" cx="202" cy="246" r="6" fill="#F2C46B"></circle><rect x="480" y="232" width="4" height="110" fill="#4A5C54"></rect><polygon points="464,226 500,226 504,236 468,236" fill="#1F4E5A"></polygon><circle class="ping-svg" cx="482" cy="246" r="6" fill="#F2C46B"></circle><path d="M0 340 H800 V450 H0 Z" fill="#AFC9AE"></path><path d="M0 372 C260 360 540 384 800 366 L800 450 L0 450 Z" fill="#8FB08F"></path></svg></div><span class="demo-tag">Illustration · demo</span><span class="caption" style="left:14px;bottom:14px;padding:8px 12px"><b style="font-size:.9375rem">[Event name]</b></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec nz">
+  <svg class="deco" width="640" height="640" viewBox="0 0 640 640" aria-hidden="true">
+    <g class="orbit"><circle cx="320" cy="320" r="300" fill="none" stroke="#2C5A48" stroke-width="1.5" stroke-dasharray="4 10"></circle><circle cx="320" cy="20" r="6" fill="#E0A43A"></circle></g>
+    <circle cx="320" cy="320" r="220" fill="none" stroke="#24503F" stroke-width="1.5"></circle>
+    <circle cx="320" cy="320" r="140" fill="none" stroke="#24503F" stroke-width="1.5"></circle>
+  </svg>
+  <div class="wrap" style="position:relative">
+    <div class="top reveal">
+      <div style="display:flex;flex-direction:column;gap:16px"><p class="eyebrow">Our commitment</p><h2 class="h2">Aligned with a net-zero future</h2></div>
+      <p>Tap a milestone to follow the road from today’s projects to India’s national net-zero goal.</p>
+    </div>
+    <div class="timeline reveal" id="timeline" role="group" aria-label="Net-zero milestones">
+      <div class="base"></div><div class="fill" id="fill"></div>
+    </div>
+    <div class="mile-card swap" id="mileCard"></div>
+  </div>
+</section>
+
+<section class="sec" id="news">
+  <div class="wrap nv">
+    <div class="reveal">
+      <div class="news-head">
+        <div style="display:flex;flex-direction:column;gap:10px"><p class="eyebrow">Newsroom</p><h2>Latest from OGEL</h2></div>
+        <a href="#" style="font-weight:600">View all →</a>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter news"></div>
+      <div class="news-grid swap" id="newsGrid"></div>
+    </div>
+    <div class="vendors reveal" id="vendors">
+      <div class="vendors-head"><h2>For Vendors</h2><a href="#" style="font-size:.875rem;font-weight:600">All tenders →</a></div>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Tender type"></div>
+      <div class="swap" id="tenderList" role="tabpanel"></div>
+      <form class="archive" aria-label="Search archive by date" onsubmit="return false" style="display:flex;flex-direction:column;gap:8px">
+        <span class="small-label">Search archive by date</span>
+        <div class="date-row">
+          <label>From<input type="date"></label>
+          <label>To<input type="date"></label>
+          <button type="submit">Search</button>
+        </div>
+      </form>
+      <div class="alerts" id="alerts">
+        <form id="alertForm" novalidate>
+          <label for="alertEmail">Get new tender alerts by email</label>
+          <div class="alert-row"><input id="alertEmail" type="email" placeholder="name@company.com" autocomplete="email"><button type="submit">Subscribe</button></div>
+          <span class="err" id="alertErr" role="alert" hidden>Please enter a valid email address.</span>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap explore reveal">
+    <a href="#" class="card shine ex" style="background:var(--sage);border-color:#D3E0D2"><small style="color:var(--forest)">Investors</small><div><b>Financial results &amp; highlights</b><span>Investor services and contacts</span></div><span class="go" style="color:var(--forest)">→</span></a>
+    <a href="#" class="card shine ex" style="background:var(--sand);border-color:#E8DBBC"><small style="color:var(--amber)">Careers</small><div><b>Build the energy transition with us</b><span>Current openings and results</span></div><span class="go" style="color:var(--amber)">→</span></a>
+    <a href="#" class="card shine ex" style="background:#E2EEEF;border-color:#CDE0E2"><small style="color:#22636A">CSR</small><div><b>CSR@OGEL</b><span>Events, publications and success stories</span></div><span class="go" style="color:#22636A">→</span></a>
+    <a href="#" class="card shine ex"><small style="color:var(--forest)">Sustainability</small><div><b>Sustainability &amp; HSE@OGEL</b><span>Health, safety and environment</span></div><span class="go" style="color:var(--forest)">→</span></a>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="lead-box reveal">
+      <div class="zoom"><div class="zin"><svg viewBox="0 0 480 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"><defs><linearGradient id="gP" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9CC9A0"></stop><stop offset="1" stop-color="#1F5C45"></stop></linearGradient></defs><rect width="480" height="360" fill="url(#gP)"></rect><g class="orbit"><circle cx="240" cy="170" r="150" fill="none" stroke="#F6F7F2" stroke-width="1.5" stroke-dasharray="3 10" opacity="0.6"></circle></g><circle cx="240" cy="140" r="56" fill="#E8D5B5"></circle><path d="M184 128 C184 90 210 76 240 76 C272 76 298 92 296 130 C286 108 262 100 240 100 C216 100 196 108 184 128 Z" fill="#2B2A26"></path><path d="M110 360 C110 260 170 222 240 222 C310 222 370 260 370 360 Z" fill="#12372A"></path><polygon points="222,222 258,222 248,300 240,312 232,300" fill="#F6F7F2"></polygon><polygon points="236,230 244,230 248,290 240,300 232,290" fill="#E0A43A"></polygon></svg></div><span class="demo-tag">Illustration · demo</span></div>
+      <div class="lead-body">
+        <p class="eyebrow">Message from leadership</p>
+        <q>[Leadership message — two or three lines on OGEL’s vision for India’s clean energy transition.]</q>
+        <div class="lead-foot">
+          <div><b style="display:block">[Name]</b><span style="font-size:.875rem;color:var(--muted)">[Designation], OIL Green Energy Limited</span></div>
+          <a href="#" class="btn btn-dark" style="min-height:48px">Read full message</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol" style="gap:20px">
+        <div class="brand" style="color:#F6F7F2"><svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true">
+<circle cx="32" cy="36" r="27" fill="none" stroke="#E0A43A" stroke-width="3" stroke-linecap="round" stroke-dasharray="58 200" transform="rotate(-205 32 36)"></circle>
+<path d="M32 8 C32 8 15 29 15 41 A17 17 0 0 0 49 41 C49 29 32 8 32 8 Z" fill="#9CC9A0"></path>
+<path d="M24 50 C24 38 32 30 42 28 C42 40 35 49 24 50 Z" fill="#12372A"></path>
+<path d="M25.5 48.5 L37.5 33.5" stroke="#9CC9A0" stroke-width="1.8" stroke-linecap="round"></path>
+</svg><span><b>OIL Green Energy Limited</b><small style="color:#C9D8CD">ऑयल ग्रीन एनर्जी लिमिटेड</small></span></div>
+        <span style="line-height:1.6;max-width:340px">A wholly owned subsidiary of Oil India Limited.<br>[Registered office address]<br>[Phone] · [Email]</span>
+        <div class="social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">X</a><a href="#">LinkedIn</a><a href="#">YouTube</a></div>
+      </div>
+      <div class="fcol"><h4>About</h4><a href="#">Profile</a><a href="#">Vision</a><a href="#">Board of Directors</a><a href="#">Our People</a><a href="#">Awards &amp; Accolades</a></div>
+      <div class="fcol"><h4>Business</h4><a href="#">Renewable Energy</a><a href="#">Research &amp; Development</a><a href="#">Business Development</a><a href="#">Technology Induction</a><a href="#">Performance</a></div>
+      <div class="fcol"><h4>Quick links</h4><a href="#vendors">Tenders</a><a href="#">Current Openings</a><a href="#news">Press Releases</a><a href="#">OGEL Offices</a><a href="#">Feedback</a></div>
+      <div class="fcol"><h4>Policies</h4><a href="#">Website Policies</a><a href="#">Privacy Policy</a><a href="#">Accessibility Statement</a><a href="#">Hyperlink Policy</a><a href="#">Sitemap</a></div>
+    </div>
+    <div class="fbar">
+      <span>© OIL Green Energy Limited. All rights reserved. · Visitors: [counter]</span>
+      <span>Last updated: [DD Mon YYYY] · Best viewed on Edge, Chrome, Safari &amp; Firefox</span>
+      <a href="#top" class="totop">Back to top <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15 L12 9 L18 15"></path></svg></a>
+    </div>
+  </div>
+</footer>
+
+<div id="layer"></div>
+
+<script>
+(function(){
+'use strict';
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const replay = (el) => { el.classList.remove('swap'); void el.offsetWidth; el.classList.add('swap'); };
+const ARROW = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1F5C45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 L17 7"></path><path d="M8 7 H17 V16"></path></svg>';
+const CHEV = '<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9 L12 15 L18 9"></path></svg>';
+
+const SITEMAP = [
+  ['About Us','हमारे बारे में',['Profile','Vision','Corporate Spread','JVs / PCSs / RSC / Alliances','Board of Directors','Awards and Accolades','Our People','Organisation Structure']],
+  ['Business','व्यवसाय',['Leveraging Technology','Performance','Renewable Energy','Research and Development','International Business','Business Development','Technology Induction']],
+  ['Investors','निवेशक',['Highlights','Financial Results','Investors Service','Investor Contact']],
+  ['Sustainability','सस्टेनेबिलिटी',['Sustainability at OGEL','HSE@OGEL']],
+  ['CSR','सीएसआर',['CSR@OGEL','Annual Report on CSR','CSR Expenditure','CSR Events','CSR Publication','CSR Success Stories']],
+  ['Newsroom','न्यूज़रूम',['Press Release','Publications','Photos','Videos','Communications by Leadership']],
+  ['Careers','करियर',['Career @ OGEL','Institutes','Current Opening','Results']],
+  ['For Vendors','विक्रेताओं के लिए',['National Tenders','Global Tenders','Limited Tenders','GeM Tender','Expression of Interest','E-Tender','Procurement on Nomination Basis','General Notifications','E-Tender Notification','Integrated Procurement Manual','Notice for All Bidders','Banning Policy']],
+  ['Contact Us','संपर्क करें',['OGEL Offices','Feedback']]
+];
+
+const T = {
+  en: { parentLine:'A wholly owned subsidiary of Oil India Limited', skip:'Skip to main content', reader:'Screen reader access', contrast:'Contrast', cta:'Explore our business', cta2:'About OGEL', latest:'Latest', focus:'Focus area',
+    slides:[
+      { eyebrow:'A wholly owned subsidiary of Oil India Limited', title:'Accelerating India’s clean energy transition', sub:'OIL Green Energy Limited invests in renewable energy, green hydrogen, biofuels, carbon capture and geothermal energy — building the projects that move India toward net zero.', chip:'Renewable Energy' },
+      { eyebrow:'Green hydrogen & derivatives', title:'Green hydrogen for hard-to-abate sectors', sub:'Developing projects in green hydrogen and its derivatives as part of OGEL’s calibrated investments in clean energy.', chip:'Green Hydrogen' },
+      { eyebrow:'Our commitment', title:'Aligned with net zero by 2040', sub:'OGEL’s initiatives support Oil India Limited’s target of net zero emissions by 2040 and India’s national goal of net zero by 2070.', chip:'Net zero' } ] },
+  hi: { parentLine:'ऑयल इंडिया लिमिटेड की पूर्ण स्वामित्व वाली सहायक कंपनी', skip:'मुख्य सामग्री पर जाएँ', reader:'स्क्रीन रीडर एक्सेस', contrast:'कंट्रास्ट', cta:'हमारा व्यवसाय देखें', cta2:'ओजीईएल के बारे में', latest:'नवीनतम', focus:'फोकस क्षेत्र',
+    slides:[
+      { eyebrow:'ऑयल इंडिया लिमिटेड की पूर्ण स्वामित्व वाली सहायक कंपनी', title:'भारत के स्वच्छ ऊर्जा परिवर्तन को गति', sub:'ऑयल ग्रीन एनर्जी लिमिटेड नवीकरणीय ऊर्जा, हरित हाइड्रोजन, जैव ईंधन, कार्बन कैप्चर और भू-तापीय ऊर्जा में निवेश करती है — ऐसी परियोजनाएँ जो भारत को नेट ज़ीरो की ओर ले जाती हैं।', chip:'नवीकरणीय ऊर्जा' },
+      { eyebrow:'हरित हाइड्रोजन और व्युत्पन्न', title:'कठिन क्षेत्रों के लिए हरित हाइड्रोजन', sub:'स्वच्छ ऊर्जा में ओजीईएल के निवेश के अंतर्गत हरित हाइड्रोजन और उसके व्युत्पन्नों में परियोजनाओं का विकास।', chip:'हरित हाइड्रोजन' },
+      { eyebrow:'हमारी प्रतिबद्धता', title:'2040 तक नेट ज़ीरो के लक्ष्य के साथ', sub:'ऑयल इंडिया लिमिटेड के 2040 तक नेट ज़ीरो उत्सर्जन लक्ष्य और भारत के 2070 के राष्ट्रीय लक्ष्य का समर्थन।', chip:'नेट ज़ीरो' } ] }
+};
+let lang = 'en';
+
+/* ---------- navigation ---------- */
+function buildNav(){
+  $('#navList').innerHTML = SITEMAP.map((sec, i) => {
+    const cls = 'mega' + (i >= 5 ? ' right' : '') + (sec[2].length > 8 ? ' wide' : '');
+    return '<li class="navitem"><a href="#" class="navlink" aria-haspopup="true">' + esc(lang === 'hi' ? sec[1] : sec[0]) + CHEV + '</a><div class="' + cls + '">' +
+      sec[2].map((c) => '<a href="#">' + esc(c) + '</a>').join('') + '</div></li>';
+  }).join('');
+}
+function openDrawer(){
+  const layer = $('#layer');
+  layer.innerHTML = '<div class="drawer-bg" data-close></div><aside class="drawer" role="dialog" aria-modal="true" aria-label="Main menu"><div class="drawer-head"><b class="disp" style="font-size:1.125rem">Menu</b><button type="button" class="icon-btn" data-close aria-label="Close menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg></button></div><nav aria-label="Main">' +
+    SITEMAP.map((sec, i) => '<div class="acc"><button type="button" aria-expanded="false" aria-controls="acc' + i + '"><span>' + esc(lang === 'hi' ? sec[1] : sec[0]) + '</span>' + CHEV + '</button><div class="acc-body" id="acc' + i + '">' + sec[2].map((c) => '<a href="#" data-close>' + esc(c) + '</a>').join('') + '</div></div>').join('') + '</nav></aside>';
+  document.body.style.overflow = 'hidden';
+  $$('.acc>button', layer).forEach((b) => b.addEventListener('click', () => {
+    const open = b.getAttribute('aria-expanded') === 'true';
+    $$('.acc>button', layer).forEach((o) => { o.setAttribute('aria-expanded', 'false'); o.nextElementSibling.classList.remove('open'); });
+    if (!open) { b.setAttribute('aria-expanded', 'true'); b.nextElementSibling.classList.add('open'); }
+  }));
+  bindClose(layer, '#menuBtn');
+  $('[data-close]', layer.querySelector('.drawer')).focus();
+}
+function bindClose(layer, returnSel){
+  const close = () => { layer.innerHTML = ''; document.body.style.overflow = ''; document.removeEventListener('keydown', onKey); const r = $(returnSel); if (r) r.focus(); };
+  const onKey = (e) => { if (e.key === 'Escape') close(); };
+  document.addEventListener('keydown', onKey);
+  $$('[data-close]', layer).forEach((el) => el.addEventListener('click', (e) => { if (el.tagName === 'A') e.preventDefault(); close(); }));
+  return close;
+}
+
+/* ---------- search ---------- */
+const ALL = []; SITEMAP.forEach((s) => s[2].forEach((p) => ALL.push({ label: p, section: s[0] })));
+const POPULAR = ['National Tenders','Current Opening','Financial Results','Press Release','Annual Report on CSR','OGEL Offices'];
+function openSearch(){
+  const layer = $('#layer');
+  layer.innerHTML = '<div class="search-bg" data-bg><div class="search-box" role="dialog" aria-modal="true" aria-label="Search the website"><div style="display:flex;gap:12px;align-items:center"><label class="search-field" for="q"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F5C45" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20 L16 16"></path></svg><span class="sr-only">Search</span><input id="q" type="search" placeholder="Search pages, tenders, reports…" autocomplete="off"></label><button type="button" class="icon-btn" data-close aria-label="Close search" style="width:56px;height:56px;flex-shrink:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6 L18 18 M18 6 L6 18"></path></svg></button></div><span class="small-label" id="resLabel">Popular pages</span><div class="results" id="results"></div><p id="noRes" hidden style="margin:0;color:var(--muted)"></p></div></div>';
+  document.body.style.overflow = 'hidden';
+  const close = bindClose(layer, '#searchBtn');
+  $('[data-bg]', layer).addEventListener('click', (e) => { if (e.target.hasAttribute('data-bg')) close(); });
+  const q = $('#q', layer);
+  const render = () => {
+    const v = q.value.trim().toLowerCase();
+    const list = v ? ALL.filter((r) => (r.label + ' ' + r.section).toLowerCase().includes(v)).slice(0, 12) : ALL.filter((r) => POPULAR.includes(r.label));
+    const hl = (t) => { if (!v) return esc(t); const i = t.toLowerCase().indexOf(v); return i < 0 ? esc(t) : esc(t.slice(0, i)) + '<mark>' + esc(t.slice(i, i + v.length)) + '</mark>' + esc(t.slice(i + v.length)); };
+    $('#results', layer).innerHTML = list.map((r) => '<a href="#" class="res" data-close><span style="font-weight:600">' + hl(r.label) + '</span><span>' + esc(r.section) + '</span></a>').join('');
+    $('#resLabel', layer).textContent = v ? list.length + ' matching pages' : 'Popular pages';
+    const nr = $('#noRes', layer); nr.hidden = !(v && !list.length); nr.textContent = 'No pages match “' + q.value + '”. Try “tender”, “CSR” or “results”.';
+    $$('#results [data-close]', layer).forEach((a) => a.addEventListener('click', (e) => { e.preventDefault(); close(); }));
+  };
+  q.addEventListener('input', render); render(); q.focus();
+}
+
+/* ---------- hero slider ---------- */
+let slide = 0, paused = false;
+const hero = $('#hero');
+function renderSlide(animate){
+  const s = T[lang].slides[slide];
+  $('[data-s="eyebrow"]').textContent = s.eyebrow;
+  $('[data-s="title"]').textContent = s.title;
+  $('[data-s="sub"]').textContent = s.sub;
+  $('#chipText').textContent = s.chip; $('#chipNum').textContent = '0' + (slide + 1);
+  $('#count').textContent = '0' + (slide + 1) + ' / 03';
+  $('#dots').innerHTML = [0,1,2].map((i) => '<button type="button" class="dot" aria-label="Go to slide ' + (i + 1) + '" aria-current="' + (i === slide) + '" data-i="' + i + '"><span>' + (i === slide ? '<span class="prog"></span>' : '') + '</span></button>').join('');
+  $$('#dots .dot').forEach((d) => d.addEventListener('click', () => go(+d.dataset.i)));
+  const p = $('#dots .prog'); if (p) p.addEventListener('animationend', () => go(slide + 1));
+  $$('[data-hl]').forEach((g) => g.classList.toggle('on', +g.dataset.hl === slide));
+  if (animate) { replay($('#slide')); replay($('#chip')); }
+}
+function go(n){ slide = (n + 3) % 3; renderSlide(true); }
+function setPaused(v){
+  paused = v; hero.classList.toggle('paused', v);
+  const b = $('#pauseBtn'); b.setAttribute('aria-label', v ? 'Play slideshow' : 'Pause slideshow');
+  b.innerHTML = v ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4 L20 12 L7 20 Z"></path></svg>' : '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>';
+}
+$('#prevBtn').addEventListener('click', () => go(slide - 1));
+$('#nextBtn').addEventListener('click', () => go(slide + 1));
+$('#pauseBtn').addEventListener('click', () => setPaused(!paused));
+hero.addEventListener('focusin', () => hero.classList.add('paused'));
+hero.addEventListener('focusout', () => { if (!paused) hero.classList.remove('paused'); });
+// parallax
+const PX = { sun:[-22,-16], back:[-8,-4], mid:[14,8], front:[28,10] };
+let raf = 0;
+hero.addEventListener('mousemove', (e) => {
+  const r = hero.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+  if (raf) return; raf = requestAnimationFrame(() => { raf = 0; $$('[data-px]').forEach((g) => { const k = PX[g.dataset.px]; g.style.transform = 'translate(' + (x * k[0]).toFixed(1) + 'px,' + (y * k[1]).toFixed(1) + 'px)'; }); });
+});
+hero.addEventListener('mouseleave', () => $$('[data-px]').forEach((g) => { g.style.transform = ''; }));
+
+/* ---------- roles ---------- */
+const ROLES = [
+  { label:'Vendors & Bidders', desc:'Open tenders, notifications and procurement policies.', links:['National Tenders','Global Tenders','GeM Tender','E-Tender Notification','Procurement Manual','Banning Policy'] },
+  { label:'Job Seekers', desc:'Careers, current openings and recruitment results.', links:['Career @ OGEL','Current Opening','Results','Institutes','Our People','Organisation Structure'] },
+  { label:'Investors', desc:'Financial results, highlights and investor services.', links:['Highlights','Financial Results','Investors Service','Investor Contact','Board of Directors','Performance'] },
+  { label:'Media', desc:'Press releases, photos, videos and leadership voices.', links:['Press Release','Publications','Photos','Videos','Leadership Communication','Awards and Accolades'] },
+  { label:'Communities', desc:'Our CSR work, sustainability and HSE commitments.', links:['CSR@OGEL','CSR Events','CSR Success Stories','Annual Report on CSR','Sustainability at OGEL','HSE@OGEL'] }
+];
+let role = 0;
+function renderRoles(animate){
+  $('#roles').innerHTML = ROLES.map((r, i) => '<button type="button" class="role-btn" aria-pressed="' + (i === role) + '" data-i="' + i + '">' + esc(r.label) + '</button>').join('');
+  $$('#roles .role-btn').forEach((b) => b.addEventListener('click', () => { role = +b.dataset.i; renderRoles(true); }));
+  const r = ROLES[role];
+  $('#roleCard').innerHTML = '<small>For ' + esc(r.label) + '</small><b>' + esc(r.desc) + '</b><a href="#">Go to section →</a>';
+  $('#roleTiles').innerHTML = r.links.map((l) => '<a href="#" class="tile"><span>' + esc(l) + '</span>' + ARROW + '</a>').join('');
+  if (animate) { replay($('#roleCard')); replay($('#roleTiles')); }
+}
+
+/* ---------- business ---------- */
+const AREAS = [
+  ['01','Renewable Energy','Developing renewable power projects that add clean, reliable capacity for India — the foundation of OGEL’s clean energy portfolio.'],
+  ['02','Green Hydrogen','Building projects in green hydrogen and its derivatives, a key lever for decarbonising hard-to-abate sectors.'],
+  ['03','Biofuels & Biogas','Turning biomass and waste into biofuels and biogas that cut emissions at source and support a circular economy.'],
+  ['04','Carbon Capture (CCUS)','Actively exploring carbon capture, utilisation and storage to decarbonise existing energy operations.'],
+  ['05','Geothermal Energy','Exploring geothermal energy as a steady, low-carbon source of heat and power.'],
+  ['06','Emerging Technologies','Assessing other emerging technologies that enable a sustainable and resilient energy transition.']
+];
+const ICONS = ["<svg class=\"draw\" width=\"96\" height=\"96\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"><circle pathLength=\"100\" cx=\"12\" cy=\"12\" r=\"4\"></circle><path pathLength=\"100\" d=\"M12 2 V4 M12 20 V22 M2 12 H4 M20 12 H22 M4.9 4.9 L6.3 6.3 M17.7 17.7 L19.1 19.1 M4.9 19.1 L6.3 17.7 M17.7 6.3 L19.1 4.9\"></path></svg>", "<svg class=\"draw\" width=\"96\" height=\"96\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"><circle pathLength=\"100\" cx=\"6.5\" cy=\"12\" r=\"3.5\"></circle><circle pathLength=\"100\" cx=\"17.5\" cy=\"12\" r=\"3.5\"></circle><path pathLength=\"100\" d=\"M10 12 H14\"></path></svg>", "<svg class=\"draw\" width=\"96\" height=\"96\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path pathLength=\"100\" d=\"M5 19 C5 10 11 5 19 5 C19 13 14 19 5 19 Z\"></path><path pathLength=\"100\" d=\"M5 19 L13 11\"></path></svg>", "<svg class=\"draw\" width=\"96\" height=\"96\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path pathLength=\"100\" d=\"M12 3 V14\"></path><path pathLength=\"100\" d=\"M8 10 L12 14 L16 10\"></path><path pathLength=\"100\" d=\"M3 18 H21\"></path><path pathLength=\"100\" d=\"M6 21 H18\"></path></svg>", "<svg class=\"draw\" width=\"96\" height=\"96\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path pathLength=\"100\" d=\"M12 3 C15 7 17 9.5 17 13 A5 5 0 0 1 7 13 C7 10 9 7.5 12 3 Z\"></path><path pathLength=\"100\" d=\"M4 21 H20\"></path></svg>", "<svg class=\"draw\" width=\"96\" height=\"96\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\"round\"><circle pathLength=\"100\" cx=\"12\" cy=\"12\" r=\"2\"></circle><ellipse pathLength=\"100\" cx=\"12\" cy=\"12\" rx=\"9.5\" ry=\"3.8\" transform=\"rotate(30 12 12)\"></ellipse><ellipse pathLength=\"100\" cx=\"12\" cy=\"12\" rx=\"9.5\" ry=\"3.8\" transform=\"rotate(-30 12 12)\"></ellipse></svg>"];
+let area = 0;
+function renderAreas(animate){
+  $('#areas').innerHTML = AREAS.map((a, i) => '<button type="button" role="tab" class="area" aria-selected="' + (i === area) + '" data-i="' + i + '"><span class="n">' + a[0] + '</span><span class="t">' + esc(a[1]) + '</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12 H19"></path><path d="M13 6 L19 12 L13 18"></path></svg></button>').join('');
+  $$('#areas .area').forEach((b) => { const pick = () => { if (area !== +b.dataset.i) { area = +b.dataset.i; renderAreas(true); } }; b.addEventListener('click', pick); b.addEventListener('mouseenter', () => { if (matchMedia('(hover:hover)').matches) pick(); }); });
+  const a = AREAS[area];
+  $('#areaIcon').innerHTML = ICONS[area];
+  $('#areaBody').innerHTML = '<span class="eyebrow" style="font-size:.8125rem">Pathway ' + a[0] + ' of 06</span><h3>' + esc(a[1]) + '</h3><p>' + esc(a[2]) + '</p><div class="ctas" style="margin-top:6px"><a href="#" class="btn btn-primary"><span>Explore ' + esc(a[1]) + '</span></a><a href="#news" class="btn btn-white">Related news</a></div>';
+  if (animate) replay($('#areaBody'));
+}
+
+/* ---------- net zero ---------- */
+const MILES = [
+  { label:'Today', big:'Now', title:'Building the portfolio', text:'OGEL is developing projects in renewable energy, green hydrogen and biogas, while actively exploring carbon capture, geothermal energy and other technologies.' },
+  { label:'2040', big:'2040', title:'Oil India’s net-zero target', text:'OGEL’s initiatives are aligned with Oil India Limited’s target of achieving net zero emissions by 2040.' },
+  { label:'2070', big:'2070', title:'India’s net-zero goal', text:'Every project also contributes to India’s national goal of attaining net zero by 2070.' }
+];
+let mile = 0;
+function renderMiles(animate){
+  $$('#timeline .mile').forEach((m) => m.remove());
+  MILES.forEach((m, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'mile' + (i <= mile ? ' done' : ''); b.setAttribute('aria-pressed', i === mile);
+    b.innerHTML = '<i></i><b>' + m.label + '</b>';
+    b.addEventListener('click', () => { mile = i; renderMiles(true); });
+    $('#timeline').appendChild(b);
+  });
+  $('#fill').style.width = 'calc((100% - 22px) * ' + (mile / 2) + ')';
+  const m = MILES[mile];
+  $('#mileCard').innerHTML = '<span class="big">' + m.big + '</span><div><b>' + esc(m.title) + '</b><p>' + esc(m.text) + '</p></div>';
+  if (animate) replay($('#mileCard'));
+}
+
+/* ---------- news ---------- */
+const ART = {"wind": "<svg viewBox=\"0 0 400 240\" preserveAspectRatio=\"xMidYMid slice\" aria-hidden=\"true\" style=\"position: absolute; inset: 0; width: 100%; height: 100%; display: block\"><defs><linearGradient id=\"gW\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#1F5C45\"></stop><stop offset=\"1\" stop-color=\"#E9C77E\"></stop></linearGradient></defs><rect width=\"400\" height=\"240\" fill=\"url(#gW)\"></rect><circle cx=\"300\" cy=\"170\" r=\"40\" fill=\"#F2C46B\" opacity=\"0.8\"></circle><path d=\"M0 190 C120 170 260 186 400 172 L400 240 L0 240 Z\" fill=\"#12372A\"></path><path d=\"M88.625 100 L91.375 100 L92.75 188 L87.25 188 Z\" fill=\"#FFFFFF\" stroke=\"#B9CDBD\" stroke-width=\"1\"></path><g class=\"spin\"><circle cx=\"90\" cy=\"100\" r=\"44\" fill=\"none\"></circle><path d=\"M90 100 C93.38461538461539 84.6 93.38461538461539 69.2 90 56 C86.61538461538461 69.2 86.61538461538461 84.6 90 100 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\"></path><path d=\"M90 100 C93.38461538461539 84.6 93.38461538461539 69.2 90 56 C86.61538461538461 69.2 86.61538461538461 84.6 90 100 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\" transform=\"rotate(120 90 100)\"></path><path d=\"M90 100 C93.38461538461539 84.6 93.38461538461539 69.2 90 56 C86.61538461538461 69.2 86.61538461538461 84.6 90 100 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\" transform=\"rotate(240 90 100)\"></path></g><circle cx=\"90\" cy=\"100\" r=\"3.1\" fill=\"#1F5C45\"></circle><path d=\"M198.9375 120 L201.0625 120 L202.125 184 L197.875 184 Z\" fill=\"#FFFFFF\" stroke=\"#B9CDBD\" stroke-width=\"1\"></path><g class=\"spin-slow\"><circle cx=\"200\" cy=\"120\" r=\"34\" fill=\"none\"></circle><path d=\"M200 120 C203 108.1 203 96.2 200 86 C197 96.2 197 108.1 200 120 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\"></path><path d=\"M200 120 C203 108.1 203 96.2 200 86 C197 96.2 197 108.1 200 120 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\" transform=\"rotate(120 200 120)\"></path><path d=\"M200 120 C203 108.1 203 96.2 200 86 C197 96.2 197 108.1 200 120 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\" transform=\"rotate(240 200 120)\"></path></g><circle cx=\"200\" cy=\"120\" r=\"2.4\" fill=\"#1F5C45\"></circle><path d=\"M318.5 96 L321.5 96 L323.0 176 L317.0 176 Z\" fill=\"#FFFFFF\" stroke=\"#B9CDBD\" stroke-width=\"1\"></path><g class=\"spin\"><circle cx=\"320\" cy=\"96\" r=\"48\" fill=\"none\"></circle><path d=\"M320 96 C323.6923076923077 79.2 323.6923076923077 62.400000000000006 320 48 C316.3076923076923 62.400000000000006 316.3076923076923 79.2 320 96 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\"></path><path d=\"M320 96 C323.6923076923077 79.2 323.6923076923077 62.400000000000006 320 48 C316.3076923076923 62.400000000000006 316.3076923076923 79.2 320 96 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\" transform=\"rotate(120 320 96)\"></path><path d=\"M320 96 C323.6923076923077 79.2 323.6923076923077 62.400000000000006 320 48 C316.3076923076923 62.400000000000006 316.3076923076923 79.2 320 96 Z\" fill=\"#FFFFFF\" stroke=\"#9FB8A5\" stroke-width=\"1\" transform=\"rotate(240 320 96)\"></path></g><circle cx=\"320\" cy=\"96\" r=\"3.4\" fill=\"#1F5C45\"></circle></svg>", "stage": "<svg viewBox=\"0 0 400 240\" preserveAspectRatio=\"xMidYMid slice\" aria-hidden=\"true\" style=\"position: absolute; inset: 0; width: 100%; height: 100%; display: block\"><rect width=\"400\" height=\"240\" fill=\"#12372A\"></rect><rect x=\"40\" y=\"30\" width=\"320\" height=\"130\" rx=\"10\" fill=\"#1F5C45\"></rect><g transform=\"translate(176 52) scale(0.75)\"><circle cx=\"32\" cy=\"36\" r=\"27\" fill=\"none\" stroke=\"#E0A43A\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-dasharray=\"58 200\" transform=\"rotate(-205 32 36)\"></circle><path d=\"M32 8 C32 8 15 29 15 41 A17 17 0 0 0 49 41 C49 29 32 8 32 8 Z\" fill=\"#9CC9A0\"></path><path d=\"M24 50 C24 38 32 30 42 28 C42 40 35 49 24 50 Z\" fill=\"#12372A\"></path></g><rect x=\"130\" y=\"118\" width=\"140\" height=\"10\" rx=\"5\" fill=\"#9CC9A0\" opacity=\"0.6\"></rect><polygon points=\"160,240 175,168 225,168 240,240\" fill=\"#F6F7F2\"></polygon><rect x=\"168\" y=\"160\" width=\"64\" height=\"12\" rx=\"3\" fill=\"#E0A43A\"></rect><path d=\"M200 160 L208 140\" stroke=\"#C9D8CD\" stroke-width=\"3\" stroke-linecap=\"round\"></path><circle cx=\"209\" cy=\"137\" r=\"5\" fill=\"#C9D8CD\"></circle></svg>", "album": "<svg viewBox=\"0 0 400 240\" preserveAspectRatio=\"xMidYMid slice\" aria-hidden=\"true\" style=\"position: absolute; inset: 0; width: 100%; height: 100%; display: block\"><rect width=\"400\" height=\"240\" fill=\"#E6EEE6\"></rect><g transform=\"rotate(-8 200 130)\"><rect x=\"90\" y=\"40\" width=\"220\" height=\"150\" rx=\"8\" fill=\"#FFFFFF\"></rect><rect x=\"100\" y=\"50\" width=\"200\" height=\"110\" fill=\"#C9DED8\"></rect></g><g transform=\"rotate(5 200 130)\"><rect x=\"90\" y=\"40\" width=\"220\" height=\"150\" rx=\"8\" fill=\"#FFFFFF\" stroke=\"#DDE5DC\"></rect><rect x=\"100\" y=\"50\" width=\"200\" height=\"110\" fill=\"#F4DDB0\"></rect><circle cx=\"250\" cy=\"85\" r=\"18\" fill=\"#F2C46B\"></circle><path d=\"M100 160 L100 130 C150 110 200 126 300 112 L300 160 Z\" fill=\"#7FA97F\"></path><polygon points=\"120,150 170,150 178,160 128,160\" fill=\"#1F4E5A\"></polygon><polygon points=\"185,150 235,150 243,160 193,160\" fill=\"#1F4E5A\"></polygon></g></svg>", "biogas": "<svg viewBox=\"0 0 400 240\" preserveAspectRatio=\"xMidYMid slice\" aria-hidden=\"true\" style=\"position: absolute; inset: 0; width: 100%; height: 100%; display: block\"><defs><linearGradient id=\"gG\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#D3E7E8\"></stop><stop offset=\"1\" stop-color=\"#F3F6F0\"></stop></linearGradient></defs><rect width=\"400\" height=\"240\" fill=\"url(#gG)\"></rect><path d=\"M0 170 C120 156 280 176 400 160 L400 240 L0 240 Z\" fill=\"#AFC9AE\"></path><path d=\"M60 180 A60 60 0 0 1 180 180 Z\" fill=\"#5E8C63\"></path><path d=\"M190 180 A48 48 0 0 1 286 180 Z\" fill=\"#7FA97F\"></path><rect x=\"300\" y=\"110\" width=\"40\" height=\"70\" fill=\"#FFFFFF\" stroke=\"#B9CDBD\" stroke-width=\"2\"></rect><path d=\"M180 150 H300\" stroke=\"#8FB0B3\" stroke-width=\"5\"></path><path d=\"M320 110 V80\" stroke=\"#8FB0B3\" stroke-width=\"5\"></path><g class=\"floaty\"><circle cx=\"322\" cy=\"66\" r=\"8\" fill=\"#FFFFFF\" opacity=\"0.8\"></circle><circle cx=\"332\" cy=\"50\" r=\"6\" fill=\"#FFFFFF\" opacity=\"0.6\"></circle></g><path d=\"M0 200 C140 192 260 206 400 196 L400 240 L0 240 Z\" fill=\"#5E8C63\"></path></svg>"};
+const NF = [['all','All'],['press','Press Releases'],['photos','Photos'],['videos','Videos'],['lead','Leadership']];
+const NEWS = {
+  all:[['Press release','[Press release headline]','Read more','wind'],['Communications by Leadership','[Message or interview title]','Read more','stage']],
+  press:[['Press release','[Press release headline]','Read more','wind'],['Press release','[Press release headline]','Read more','biogas']],
+  photos:[['Photo album','[Photo album title]','View album','album'],['Photo album','[Photo album title]','View album','album']],
+  videos:[['Video','[Video title]','Watch video','biogas',1],['Video','[Video title]','Watch video','wind',1]],
+  lead:[['Communications by Leadership','[Message or interview title]','Read more','stage'],['Communications by Leadership','[Message or interview title]','Read more','stage']]
+};
+let nf = 'all';
+function renderNews(animate){
+  $('#filters').innerHTML = NF.map((f) => '<button type="button" class="chip-btn" aria-pressed="' + (f[0] === nf) + '" data-f="' + f[0] + '">' + f[1] + '</button>').join('');
+  $$('#filters .chip-btn').forEach((b) => b.addEventListener('click', () => { nf = b.dataset.f; renderNews(true); }));
+  $('#newsGrid').innerHTML = NEWS[nf].map((n) => '<a href="#" class="card news-card"><div class="zoom"><div class="zin">' + ART[n[3]] + '</div><span class="demo-tag">Illustration · demo</span>' + (n[4] ? '<span class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M8 5 L19 12 L8 19 Z"></path></svg></span>' : '') + '</div><div class="body"><span class="meta">' + esc(n[0]) + ' · [DD Mon YYYY]</span><span class="title">' + esc(n[1]) + '</span><span class="more">' + n[2] + ' →</span></div></a>').join('');
+  if (animate) replay($('#newsGrid'));
+}
+
+/* ---------- tenders ---------- */
+const TABS = [['national','National'],['global','Global'],['gem','GeM'],['etender','E-Tender']];
+let tab = 'national';
+const DL = '<span class="pdf" aria-label="Download PDF"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 V15"></path><path d="M7 10 L12 15 L17 10"></path><path d="M5 20 H19"></path></svg></span>';
+function renderTabs(animate){
+  $('#tabs').innerHTML = TABS.map((t) => '<button type="button" role="tab" class="tab" aria-selected="' + (t[0] === tab) + '" data-t="' + t[0] + '">' + t[1] + '</button>').join('');
+  $$('#tabs .tab').forEach((b) => b.addEventListener('click', () => { tab = b.dataset.t; renderTabs(true); }));
+  const name = TABS.find((t) => t[0] === tab)[1];
+  $('#tenderList').innerHTML = [1,2,3].map((n) => '<a href="#" class="tender"><span><small>[Tender reference no.]</small><b>[' + name + ' tender title]</b></span><span class="right"><span class="close">' + (n === 1 ? '<span class="new ping">NEW</span>' : '') + 'Closes [DD Mon YYYY]</span>' + DL + '</span></a>').join('');
+  if (animate) replay($('#tenderList'));
+}
+$('#alertForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const v = $('#alertEmail').value.trim();
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) { $('#alertErr').hidden = false; $('#alertEmail').focus(); return; }
+  $('#alerts').innerHTML = '<div class="ok" role="status"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 L10 17 L19 7"></path></svg></span><span><b style="display:block">You’re subscribed</b><span style="font-size:.8125rem;color:var(--muted)">We’ll email ' + esc(v) + ' when new tenders are published.</span></span></div>';
+});
+$('#alertEmail').addEventListener('input', () => { $('#alertErr').hidden = true; });
+
+/* ---------- utility bar ---------- */
+const root = document.documentElement;
+const store = { get(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v){ try { localStorage.setItem(k, v); } catch (e) {} } };
+function setTs(ts){ root.classList.remove('ts-sm','ts-lg'); if (ts !== 'md') root.classList.add('ts-' + ts); $$('[data-ts]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.ts === ts)); store.set('ogel-ts', ts); }
+$$('[data-ts]').forEach((b) => b.addEventListener('click', () => setTs(b.dataset.ts)));
+function setHc(on){ root.classList.toggle('hc', on); $('#hcBtn').setAttribute('aria-pressed', on); store.set('ogel-hc', on ? '1' : '0'); }
+$('#hcBtn').addEventListener('click', () => setHc(!root.classList.contains('hc')));
+function setLang(l){
+  lang = l; root.lang = l === 'hi' ? 'hi' : 'en';
+  $$('[data-lang]').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === l));
+  $$('[data-i18n]').forEach((el) => { const v = T[l][el.dataset.i18n]; if (v) el.textContent = v; });
+  buildNav(); renderSlide(true); store.set('ogel-lang', l);
+}
+$$('[data-lang]').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
+$('#searchBtn').addEventListener('click', openSearch);
+$('#menuBtn').addEventListener('click', openDrawer);
+
+/* ---------- scroll reveal ---------- */
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  $$('.reveal').forEach((el) => io.observe(el));
+} else { $$('.reveal').forEach((el) => el.classList.add('in')); }
+
+/* ---------- init ---------- */
+buildNav(); renderSlide(false); setPaused(false); renderRoles(false); renderAreas(false); renderMiles(false); renderNews(false); renderTabs(false);
+setTs(store.get('ogel-ts') || 'md'); setHc(store.get('ogel-hc') === '1');
+if (store.get('ogel-lang') === 'hi') setLang('hi');
+})();
+</script>
+</body>
+</html>
